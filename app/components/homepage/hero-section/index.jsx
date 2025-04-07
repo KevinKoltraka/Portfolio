@@ -70,7 +70,7 @@ function HeroSection() {
           </div>
 
         </div>
-        <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
+        <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
           <div className="flex flex-row">
             <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
             <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
@@ -96,38 +96,41 @@ function HeroSection() {
                 <span className="text-amber-300">Kevin</span>
                 <span className="text-gray-400">{`',`}</span>
               </div>
-              <div className="ml-4 lg:ml-8 mr-2 whitespace-nowrap">
-                <span className=" text-white">skills:</span>
-                <span className="text-gray-400">{`['`}</span>
-                <span className="text-amber-300">React</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">JavaScript</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">TypeScript</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">NextJS</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">NodeJs</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Express</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Python</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Sass</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Git</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">GitHub</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">PostgreSQL</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">MySql</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">MongoDB</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Docker</span>
-                <span className="text-gray-400">{"'],"}</span>
+              <div className="ml-4 lg:ml-8 mr-2 min-w-[600px]">
+                <div className="whitespace-nowrap">
+                  <span className=" text-white">skills:</span>
+                  <span className="text-gray-400">{`['`}</span>
+                  <span className="text-amber-300">React</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">JavaScript</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">TypeScript</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">NextJS</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">NodeJs</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">Express</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">Python</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">Sass</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">Git</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">GitHub</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">PostgreSQL</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">MySql</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">MongoDB</span>
+                  <span className="text-gray-400">{"', '"}</span>
+                  <span className="text-amber-300">Docker</span>
+                  <span className="text-gray-400">{"'],"}</span>
+                </div>
               </div>
+
               <div>
                 <span className="ml-4 lg:ml-8 mr-2 text-white">hardWorker:</span>
                 <span className="text-orange-400">true</span>
