@@ -82,7 +82,7 @@ function HeroSection() {
               <div className="h-3 w-3 rounded-full bg-green-200"></div>
             </div>
           </div>
-          <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
+          <div className="overflow-x-auto border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
             <code className="font-mono text-xs md:text-sm lg:text-base">
               <div className="blink">
                 <span className="mr-2 text-pink-500">const</span>
@@ -96,7 +96,7 @@ function HeroSection() {
                 <span className="text-amber-300">Kevin</span>
                 <span className="text-gray-400">{`',`}</span>
               </div>
-              <div className="ml-4 lg:ml-8 mr-2">
+              <div className="ml-4 lg:ml-8 mr-2 whitespace-nowrap">
                 <span className=" text-white">skills:</span>
                 <span className="text-gray-400">{`['`}</span>
                 <span className="text-amber-300">React</span>
