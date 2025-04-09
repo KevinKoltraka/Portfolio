@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const GlowCard = ({ children, identifier }) => {
   useEffect(() => {
@@ -39,8 +39,7 @@ const GlowCard = ({ children, identifier }) => {
 
           let ANGLE =
             (Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) *
-              180) /
-            Math.PI;
+              180) / Math.PI;
 
           ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
 

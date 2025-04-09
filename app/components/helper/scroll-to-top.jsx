@@ -12,15 +12,20 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Show button when user scrolls past SCROLL_THRESHOLD
       if (window.scrollY > SCROLL_THRESHOLD) {
         setBtnCls(DEFAULT_BTN_CLS.replace(" hidden", ""));
       } else {
         setBtnCls(DEFAULT_BTN_CLS + " hidden");
       }
     };
+
+    // Add scroll event listener
     window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Cleanup listener on component unmount
     return () => {
-      window.removeEventListener("scroll", handleScroll, { passive: true });
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
