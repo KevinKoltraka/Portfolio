@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa6";
 
-const DEFAULT_BTN_CLS =
-  "fixed bottom-8 right-6 z-50 flex items-center rounded-full bg-gradient-to-r from-pink-500 to-violet-600 p-4 hover:text-xl transition-all duration-300 ease-out";
+// Added 'hidden' to initial class - CRITICAL HYDRATION FIX
+const DEFAULT_BTN_CLS = 
+  "fixed bottom-8 right-6 z-50 flex items-center rounded-full bg-gradient-to-r from-pink-500 to-violet-600 p-4 hover:text-xl transition-all duration-300 ease-out hidden";
 const SCROLL_THRESHOLD = 50;
 
 const ScrollToTop = () => {
@@ -12,21 +13,19 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show button when user scrolls past SCROLL_THRESHOLD
+      // Optimized class toggle - prevents unnecessary state updates
       if (window.scrollY > SCROLL_THRESHOLD) {
-        setBtnCls(DEFAULT_BTN_CLS.replace(" hidden", ""));
+        setBtnCls(prev => prev.includes("hidden") ? DEFAULT_BTN_CLS.replace(" hidden", "") : prev);
       } else {
-        setBtnCls(DEFAULT_BTN_CLS + " hidden");
+        setBtnCls(prev => prev.includes("hidden") ? prev : DEFAULT_BTN_CLS);
       }
     };
 
-    // Add scroll event listener
     window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Cleanup listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    // Initial check to sync state with actual scroll position
+    handleScroll();
+    
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const onClickBtn = () => window.scrollTo({ top: 0, behavior: "smooth" });

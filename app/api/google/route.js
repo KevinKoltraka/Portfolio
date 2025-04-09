@@ -2,28 +2,32 @@ import axios from "axios";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const reqBody = await request.json();
-  const secret_key = process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY;
-
   try {
-    const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${reqBody.token}`;
+    const { token } = await request.json();
+    const secret_key = process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY;
 
-    const res = await axios.post(url);
-    if (res.data.success) {
-      return NextResponse.json({
-        message: "Captcha verification success!!",
-        success: true,
+    const { data } = await axios.post(
+      `https://www.google.com/recaptcha/api/siteverify`,
+      new URLSearchParams({
+        secret: secret_key,
+        response: token,
       })
-    };
+    );
 
-    return NextResponse.json({
-      error: "Captcha verification failed!",
-      success: false,
-    }, { status: 500 });
+    return data.success
+      ? NextResponse.json({ 
+          message: "Captcha verification success!!", 
+          success: true 
+        })
+      : NextResponse.json(
+          { error: "Captcha verification failed!", success: false },
+          { status: 400 }
+        );
+        
   } catch (error) {
-    return NextResponse.json({
-      error: "Captcha verification failed!",
-      success: false,
-    }, { status: 500 });
+    return NextResponse.json(
+      { error: "Captcha verification failed!", success: false },
+      { status: 500 }
+    );
   }
 };
